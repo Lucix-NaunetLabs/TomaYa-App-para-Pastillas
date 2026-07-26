@@ -1,0 +1,32 @@
+{
+  "name": "TomaYa - Recordatorio de Pastillas",
+  "short_name": "TomaYa",
+  "description": "Recuerda tomar tu pastilla diaria, lleva tu racha y tu historial.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#E7F8FE",
+  "theme_color": "#63D3F8",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "icono.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icono.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icono.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

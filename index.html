@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>TomaYa</title>
+  <meta name="description" content="Recuerda tomar tu pastilla diaria" />
+  <meta name="theme-color" content="#63D3F8" />
+
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" href="./icono.png" />
+  <link rel="apple-touch-icon" href="./icono.png" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- ENCABEZADO -->
+    <header class="header">
+      <h1 class="logo">
+        <span class="logo-pill" aria-hidden="true">💊</span>
+        TomaYa
+      </h1>
+      <button id="btnAbrirModal" class="btn-icon" aria-label="Configurar pastilla" title="Configurar pastilla">+</button>
+    </header>
+
+    <main class="main">
+
+      <!-- INFO DE LA PASTILLA CONFIGURADA -->
+      <section id="pillInfo" class="pill-info hidden">
+        <p class="pill-info-name" id="pillName">—</p>
+        <p class="pill-info-detail" id="pillDetail">—</p>
+      </section>
+
+      <section id="pillEmpty" class="pill-empty">
+        <p>Aún no has configurado tu pastilla.</p>
+        <button id="btnConfigurarAhora" class="btn-link">Configurar ahora</button>
+      </section>
+
+      <!-- BOTÓN TOMAR PASTILLA -->
+      <button id="btnTomar" class="btn-tomar" disabled>
+        Tomar Pastilla
+      </button>
+      <p id="tomarHint" class="tomar-hint"></p>
+
+      <!-- REGISTRO -->
+      <section class="registro">
+        <h2 class="section-title">Registro</h2>
+        <ul id="historyList" class="history-list">
+          <li class="history-empty">Todavía no hay registros.</li>
+        </ul>
+      </section>
+
+      <!-- RACHA -->
+      <section class="racha">
+        <span>Días de racha: <strong id="rachaCount">0</strong>🔥</span>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- MODAL CONFIGURAR PASTILLA -->
+  <div id="modalOverlay" class="modal-overlay hidden">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+      <div class="modal-header">
+        <h2 id="modalTitulo">Configurar pastilla</h2>
+        <button id="btnCerrarModal" class="btn-icon" aria-label="Cerrar">✕</button>
+      </div>
+
+      <label class="campo">
+        <span class="campo-label">Nombre de la pastilla</span>
+        <input type="text" id="inputNombre" placeholder="Ej. Ibuprofeno" maxlength="40" />
+      </label>
+
+      <div class="campo">
+        <span class="campo-label">Hora de la toma</span>
+        <div class="time-picker">
+          <select id="selectHora" aria-label="Hora"></select>
+          <span class="time-sep">:</span>
+          <select id="selectMinuto" aria-label="Minutos"></select>
+        </div>
+      </div>
+
+      <div class="campo">
+        <span class="campo-label">Días de la semana</span>
+        <div class="dias-selector" id="diasSelector">
+          <button type="button" class="dia-btn" data-dia="1">L</button>
+          <button type="button" class="dia-btn" data-dia="2">M</button>
+          <button type="button" class="dia-btn" data-dia="3">X</button>
+          <button type="button" class="dia-btn" data-dia="4">J</button>
+          <button type="button" class="dia-btn" data-dia="5">V</button>
+          <button type="button" class="dia-btn" data-dia="6">S</button>
+          <button type="button" class="dia-btn" data-dia="0">D</button>
+        </div>
+      </div>
+
+      <button id="btnGuardarPastilla" class="btn-tomar">Guardar</button>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
