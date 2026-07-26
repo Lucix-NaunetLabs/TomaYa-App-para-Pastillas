@@ -1,12 +1,5 @@
-// app.js — Lógica principal de TomaYa
-
-// --- Configuración del backend de notificaciones push (opcional) ---
-// Si despliegas el servidor de la carpeta /server, pega aquí tu clave
-// pública VAPID y la URL donde quede publicado el backend. Mientras
-// dejes los valores por defecto, la app funciona igual pero solo avisa
-// localmente mientras esté abierta (ver sección NOTIFICACIONES).
 const VAPID_PUBLIC_KEY = 'BIni-caAGLQiKSV82jnS__j3Jfrespxtyk67BygA9q0-rlWcDXSwZXXlJvlzL_pZbWb1SRWpwMju0h4FMQduF0k';
-const BACKEND_URL = 'https://tu-backend.example.com';
+const BACKEND_URL = 'https://tomaya-app-para-pastillas.onrender.com';
 
 function backendConfigurado() {
   return BACKEND_URL && !BACKEND_URL.includes('tu-backend') &&
